@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda - Dayana & Freddy</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&family=Lustria&family=Nunito:wght@300;400;600&family=Open+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Pantalla de inicio para habilitar la música -->
+    <div id="audio-overlay">
+        <div class="overlay-content">
+            <h1 class="overlay-title">Dayana & Freddy</h1>
+            <p>¡Bienvenidos a nuestra invitación!</p>
+            <button id="start-btn">Entrar a la invitación</button>
+        </div>
+    </div>
+    
+    <!-- Archivo de Audio (Reemplaza 'cancion.mp3' por tu archivo real) -->
+    <audio id="bg-music" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- 1. Portada / Cabecera (Hero Section) -->
+    <header class="hero">
+        <img src="hero.jpg" alt="Dayana y Freddy" class="hero-img">
+        <div class="hero-content">
+            <h3 class="pre-title">Nuestra Boda</h3>
+            <h1 class="title">Dayana<br><span class="y-conj">&</span><br>Freddy</h1>
+            
+            <div class="date-container">
+                <span class="day-name">Viernes</span>
+                <span class="day-num">6</span>
+                <div class="month-time">
+                    <span class="month">NOV</span>
+                    <span class="time">7:00 PM</span>
+                </div>
+            </div>
+            
+            <!-- Imagen de Anillos agregada aquí -->
+            <div class="rings-container">
+                <img src="anillos.png" alt="Anillos de boda" class="rings-img">
+            </div>
+            
+            <div class="countdown" id="countdown">
+                <!-- Se llena con JavaScript -->
+            </div>
+        </div>
+    </header>
+
+    <div class="decor-divider">
+        <img src="Dayana.png" alt="Decoración floral" class="floral-deco">
+    </div>
+
+    <!-- 2. La Historia (About Us) -->
+    <section class="historia" id="historia">
+        <h2 class="section-title">Nuestra Historia</h2>
+        <div class="historia-content">
+            <img src="Dayana (1).png" alt="Decoración lateral" class="deco-side left">
+            <p class="story-text">
+                [Placeholder de la historia: Aquí pueden contar cómo se conocieron, cómo fue el momento de la propuesta, o escribir una dedicatoria especial sobre el inicio de esta nueva aventura juntos. Un par de párrafos cortos son ideales para mantener la atención y conectar con sus invitados.]
+            </p>
+            <img src="Dayana (1).png" alt="Decoración lateral" class="deco-side right">
+        </div>
+    </section>
+
+    <!-- 3. Información del Evento -->
+    <section class="evento" id="evento">
+        <h2 class="section-title">El Evento</h2>
+        <p class="cormorant-text highlight">Este día muy especial estaremos junto a nuestros seres queridos.</p>
+
+        <div class="details-container">
+            <div class="event-card">
+                <h3>Ceremonia</h3>
+                <p class="cormorant-text bold">7:00 PM</p>
+                <p class="cormorant-text">Parroquia María Auxiliadora</p>
+                <p class="cormorant-text">Calle 38B # 7C-8, Barrio la Magdalena</p>
+            </div>
+            <div class="event-card">
+                <h3>Recepción</h3>
+                <p class="cormorant-text bold">[Hora de la recepción]</p>
+                <p class="cormorant-text">[Lugar de la recepción]</p>
+                <p class="cormorant-text">[Dirección del lugar de recepción]</p>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <!-- Mapa embebido de Google Maps -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.2537000052134!2d-74.79449460000001!3d10.9441986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef5d2ba85151e2b%3A0xc543566a516112c1!2sParroquia%20Maria%20Auxiliadora!5e0!3m2!1ses-419!2sco!4v1789089350197!5m2!1ses-419!2sco" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </section>
+
+    <div class="decor-divider">
+        <img src="Dayana (2).png" alt="Decoración floral" class="floral-deco">
+    </div>
+
+    <!-- 5. Código de Vestimenta (Dress Code) -->
+    <section class="dress-code" id="dress-code">
+        <h2 class="section-title">Código de Vestimenta</h2>
+        <p class="cormorant-text">Vestimenta Formal</p>
+        <div class="vestimenta-container">
+            <!-- Usando la imagen proporcionada -->
+            <img src="vestimenta.jpeg" alt="Guía de código de vestimenta" class="vestimenta-img">
+        </div>
+    </section>
+    
+<!-- Lluvia de Sobres -->
+<section class="regalos" id="regalos">
+    <h2 class="section-title">Lluvia de Sobres</h2>
+    <p class="cormorant-text">El mejor regalo es su compañía. Si desean hacernos un presente adicional, tendremos un buzón para lluvia de sobres en la recepción.</p>
+    <div class="sobres-placeholder">
+        <img src="cofre.png" alt="Cofre para Lluvia de Sobres" class="sobre-img">
+    </div>
+</section>
+
+    <!-- 4. Confirmación de Asistencia (RSVP) -->
+    <section class="rsvp" id="rsvp">
+        <h2 class="edwardian-text">¡Te esperamos!</h2>
+        <h3 class="section-title" style="font-size: 2rem;">Confirma tu Asistencia</h3>
+        
+        <form id="rsvp-form" action="#" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre y Apellido:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre completo">
+            </div>
+
+            <div class="form-group">
+                <label>¿Asistirás a nuestra boda?</label>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="asistencia" value="Si" required> Sí, confirmo mi asistencia</label>
+                    <label class="radio-label"><input type="radio" name="asistencia" value="No"> Lo siento, no podré acompañarlos</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="restricciones">Restricciones alimentarias:</label>
+                <input type="text" id="restricciones" name="restricciones" placeholder="Ej: Vegetariano, Alergia al maní, Ninguna">
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Déjanos un mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Tus buenos deseos aquí..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar Confirmación</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Con amor, Dayana & Freddy | 06 . 11 . 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
