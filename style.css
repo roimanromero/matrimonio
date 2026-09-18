@@ -220,8 +220,114 @@ section {
     opacity: 0.5;
     z-index: 1;
 }
-.deco-side.left { top: -20px; left: -20px; transform: rotate(-15deg); }
-.deco-side.right { bottom: -20px; right: -20px; transform: rotate(165deg); }
+/* Contenedor de la historia */
+.historia-content {
+    position: relative;
+    padding: 20px 10px;
+    overflow: hidden; /* Evita que las imágenes generen barra de desplazamiento horizontal */
+}
+
+/* Estilo base para todas las flores laterales */
+.deco-side {
+    position: absolute;
+    width: 120px;
+    height: auto;
+    opacity: 0.45; /* Ligera transparencia para integrarse sutilmente */
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Posicionamiento específico a lo largo del scroll */
+.deco-side.left {
+    left: -25px;
+}
+
+.deco-side.right {
+    right: -25px;
+}
+
+/* Distribución en diferentes alturas del bloque */
+.deco-side.pos-1 { top: 2%; transform: rotate(-15deg); }
+.deco-side.pos-2 { top: 28%; transform: rotate(20deg) scaleX(-1); } /* Invertida para variedad */
+.deco-side.pos-3 { top: 58%; transform: rotate(-10deg); }
+.deco-side.pos-4 { top: 85%; transform: rotate(165deg); }
+
+/* Ajuste responsive para pantallas más grandes (Tablets/Desktop) */
+@media (min-width: 768px) {
+    .deco-side {
+        width: 160px;
+        opacity: 0.6;
+    }
+    .deco-side.left { left: -40px; }
+    .deco-side.right { right: -40px; }
+}
+/* Estilos para la historia y animación desvanecida */
+.story-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 20px 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Tarjeta sin fondo */
+.story-card {
+    background: transparent;
+    padding: 15px 20px;
+    text-align: center;
+    border: none;
+    box-shadow: none;
+}
+
+.story-text {
+    font-family: var(--font-cormorant);
+    font-size: 1.3rem;
+    color: var(--dark-gold);
+    line-height: 1.8;
+}
+
+.story-text.header-quote {
+    font-family: var(--font-edwardian);
+    font-size: 3.2rem;
+    color: var(--navy);
+}
+
+/* Párrafo destacado con alto contraste y negrita */
+.story-text.bold-highlight-quote {
+    font-family: var(--font-playfair);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 600; /* Un toque más de tamaño para resaltar */
+}
+
+.story-text.highlight-quote {
+    font-family: var(--font-playfair);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.story-text.footer-quote {
+    font-weight: bold;
+    color: var(--navy);
+}
+
+/* Clases de animación inicial e interactiva */
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(60px); /* Comienza a la derecha */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Velocidad lenta e imponente */
+    will-change: opacity, transform;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0); /* Vuelve a su posición original */
+}
 
 /* 3. Evento */
 .highlight {

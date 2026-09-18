@@ -70,3 +70,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+// 4. Animación al hacer scroll para las tarjetas de Nuestra Historia
+    const cards = document.querySelectorAll('.fade-in-right');
+
+    const observerOptions = {
+        root: null,
+        threshold: 0.2, // La animación se activa cuando el 20% de la tarjeta es visible
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const storyObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Si quieres que la animación vuelva a repetirse al subir/bajar, quita la siguiente línea:
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    cards.forEach(card => {
+        storyObserver.observe(card);
+    });
