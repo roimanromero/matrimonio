@@ -106,7 +106,6 @@ section {
     text-align: center;
     padding-bottom: 40px;
 }
-/* Modificaciones para que la imagen no se corte */
 .hero-img {
     width: 100%;
     height: auto;
@@ -168,7 +167,7 @@ section {
     text-align: center;
 }
 .rings-img {
-    width: 110px; /* Aumentado de 70px a 110px para que se vean más grandes */
+    width: 110px;
     height: auto;
     object-fit: contain;
 }
@@ -204,27 +203,8 @@ section {
 /* 2. Historia */
 .historia-content {
     position: relative;
-    padding: 20px;
-}
-.story-text {
-    font-family: var(--font-cormorant);
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--dark-gold);
-    position: relative;
-    z-index: 2;
-}
-.deco-side {
-    position: absolute;
-    width: 100px;
-    opacity: 0.5;
-    z-index: 1;
-}
-/* Contenedor de la historia */
-.historia-content {
-    position: relative;
     padding: 20px 10px;
-    overflow: hidden; /* Evita que las imágenes generen barra de desplazamiento horizontal */
+    overflow: hidden;
 }
 
 /* Estilo base para todas las flores laterales */
@@ -232,37 +212,21 @@ section {
     position: absolute;
     width: 120px;
     height: auto;
-    opacity: 0.45; /* Ligera transparencia para integrarse sutilmente */
+    opacity: 0.45;
     z-index: 1;
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
-/* Posicionamiento específico a lo largo del scroll */
-.deco-side.left {
-    left: -25px;
-}
+.deco-side.left { left: -25px; }
+.deco-side.right { right: -25px; }
 
-.deco-side.right {
-    right: -25px;
-}
-
-/* Distribución en diferentes alturas del bloque */
 .deco-side.pos-1 { top: 2%; transform: rotate(-15deg); }
-.deco-side.pos-2 { top: 28%; transform: rotate(20deg) scaleX(-1); } /* Invertida para variedad */
+.deco-side.pos-2 { top: 28%; transform: rotate(20deg) scaleX(-1); }
 .deco-side.pos-3 { top: 58%; transform: rotate(-10deg); }
 .deco-side.pos-4 { top: 85%; transform: rotate(165deg); }
 
-/* Ajuste responsive para pantallas más grandes (Tablets/Desktop) */
-@media (min-width: 768px) {
-    .deco-side {
-        width: 160px;
-        opacity: 0.6;
-    }
-    .deco-side.left { left: -40px; }
-    .deco-side.right { right: -40px; }
-}
-/* Estilos para la historia y animación desvanecida */
+/* Contenedor de tarjetas de historia */
 .story-cards-container {
     display: flex;
     flex-direction: column;
@@ -272,7 +236,6 @@ section {
     z-index: 2;
 }
 
-/* Tarjeta sin fondo */
 .story-card {
     background: transparent;
     padding: 15px 20px;
@@ -281,31 +244,31 @@ section {
     box-shadow: none;
 }
 
+/* Estilos de Texto Agrandados para la Historia */
 .story-text {
     font-family: var(--font-cormorant);
-    font-size: 1.3rem;
+    font-size: 1.5rem; /* Aumentado de 1.3rem */
     color: var(--dark-gold);
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
 .story-text.header-quote {
     font-family: var(--font-edwardian);
-    font-size: 3.2rem;
+    font-size: 3.8rem; /* Aumentado de 3.2rem */
     color: var(--navy);
 }
 
-/* Párrafo destacado con alto contraste y negrita */
 .story-text.bold-highlight-quote {
     font-family: var(--font-playfair);
-    font-size: 1.5rem;
+    font-size: 1.75rem; /* Aumentado de 1.5rem */
     font-style: italic;
     color: var(--gold);
-    font-weight: 600; /* Un toque más de tamaño para resaltar */
+    font-weight: 600;
 }
 
 .story-text.highlight-quote {
     font-family: var(--font-playfair);
-    font-size: 1.5rem;
+    font-size: 1.75rem; /* Aumentado de 1.5rem */
     font-style: italic;
     color: var(--gold);
     font-weight: 600;
@@ -314,19 +277,20 @@ section {
 .story-text.footer-quote {
     font-weight: bold;
     color: var(--navy);
+    font-size: 1.6rem;
 }
 
 /* Clases de animación inicial e interactiva */
 .fade-in-right {
     opacity: 0;
-    transform: translateX(60px); /* Comienza a la derecha */
-    transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Velocidad lenta e imponente */
+    transform: translateX(60px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
     will-change: opacity, transform;
 }
 
 .fade-in-right.visible {
     opacity: 1;
-    transform: translateX(0); /* Vuelve a su posición original */
+    transform: translateX(0);
 }
 
 /* 3. Evento */
@@ -373,7 +337,7 @@ section {
 }
 .sobre-img {
     width: 100%;
-    max-width: 260px; /* Aumentado para que el cofre se vea más grande */
+    max-width: 260px;
     height: auto;
     object-fit: contain;
 }
@@ -445,7 +409,7 @@ input[type="text"]:focus, textarea:focus {
     background-color: var(--gold);
 }
 
-/* Footer. */
+/* Footer */
 footer {
     background-color: var(--navy);
     color: var(--off-white);
@@ -458,6 +422,13 @@ footer {
 
 /* Responsividad (Desktop) */
 @media (min-width: 768px) {
+    .deco-side {
+        width: 160px;
+        opacity: 0.6;
+    }
+    .deco-side.left { left: -40px; }
+    .deco-side.right { right: -40px; }
+
     .hero-content {
         max-width: 600px;
         margin: -40px auto 0;
