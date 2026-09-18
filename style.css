@@ -445,7 +445,7 @@ input[type="text"]:focus, textarea:focus {
     background-color: var(--gold);
 }
 
-/* Footer */
+/* Footer. */
 footer {
     background-color: var(--navy);
     color: var(--off-white);
