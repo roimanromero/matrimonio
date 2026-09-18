@@ -248,6 +248,7 @@ section {
 .story-text {
     font-family: var(--font-cormorant);
     font-size: 1.5rem; /* Aumentado de 1.3rem */
+    font-style: italic;
     color: var(--dark-gold);
     line-height: 1.9;
 }
